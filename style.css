@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+
 html {
     overflow-y: scroll;
     /*    overflow-x: hidden;*/
@@ -328,12 +329,13 @@ header {
 .grid_wrapper {
     max-width: 1100px;
     margin: 0 auto;
+/*    border: 1px solid black;*/
 }
 
 .grid {
-    justify-content: center;
     margin: 0 auto;
-    text-align: center;    
+    text-align: center;
+/*    border: 1px solid blue;*/
 }
 
 .grid:after {
@@ -356,12 +358,42 @@ header {
     object-fit: cover;
     background-color: gray;
 }
+
 .grid-item p {
     line-height: normal;
     text-align: center;
     width: 100%;
 }
 
+
+/* Affiliates section */
+
+.affiliates {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.affiliate {
+    width: 20vw;
+    height: 20vw;
+    padding: 20px;
+    min-width: 200px;
+    min-height: 200px;
+    cursor: pointer;
+}
+
+.affiliate:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.affiliate img {
+    height: 100%;
+    width: auto;
+}
 
 
 
@@ -386,7 +418,7 @@ header {
         display: none;
         font-size: 2.1em;
     }
-    
+
     .logo img {
         max-width: 50vw;
         min-width: 20vw;
@@ -399,7 +431,7 @@ header {
         margin: 0;
         box-sizing: border-box;
     }
-    
+
     .cover {
         margin-top: 50px;
     }
@@ -407,6 +439,7 @@ header {
     .cover h1 {
         font-size: 1.6em;
     }
+
     .social li {
         font-size: 2em;
     }
@@ -420,20 +453,25 @@ header {
     .paddable {
         padding: 10px;
         box-sizing: border-box;
+        margin: 0 auto;
     }
 
     .contact {
-            text-align: center;
+        text-align: center;
     }
-    
+
     .contact p {
         margin: 10px auto;
     }
-    
+
     .contact form {
-    width: 80%;
-    margin: 0 auto;
-}
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .sect h1 {
+        text-align: center;
+    }
 
 
 

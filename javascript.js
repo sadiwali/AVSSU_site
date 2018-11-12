@@ -1,17 +1,16 @@
-
-
-var GRID_ITEM_WIDTH = 440; // 100px each cell in grid
+var GRID_ITEM_WIDTH = 200; // 100px each cell in grid
 var GRID_GAP = 40; // 10 px grid gap for packery
 
 
 $(document).ready(function () {
-    
-     $('.grid').packery({
-        itemSelector: '.grid-item',
-        gutter: GRID_GAP,
-        stagger: 30,
-        transitionDuration: '0.2s',
-    });
+    if ($('.grid').length != 0) {
+        $('.grid').packery({
+            itemSelector: '.grid-item',
+            gutter: GRID_GAP,
+            stagger: 30,
+            transitionDuration: '0.2s',
+        });
+    }
 
     // the menu click handling
     $(".menu_items > li").each(function () {
@@ -42,7 +41,7 @@ $(document).ready(function () {
         }
 
     });
-    
+
     fixMenuBars();
     setGridBodyWidth();
 });
@@ -55,6 +54,7 @@ $(window).scroll(function () {
 // set the grid body width so it is tightest, for centering
 function setGridBodyWidth() {
     var howManyCanFit = Math.floor($('.grid_wrapper').width() / (GRID_ITEM_WIDTH + GRID_GAP));
+    console.log(howManyCanFit);
     $('.grid').css({
         'width': (howManyCanFit * (GRID_ITEM_WIDTH + GRID_GAP) - GRID_GAP).toString() + 'px'
     });
@@ -66,26 +66,29 @@ function fixMenuBars() {
     var sum = $(".logo").position().top + $(".logo").outerHeight() + buffer;
     var diff = Math.abs($(window).scrollTop() - sum);
 
-    if ($(window).scrollTop() < (sum )) {
+    if ($(window).scrollTop() < (sum)) {
         $('.top_bar').css("background-color", "rgba(255, 255, 255, 0)");
         $('.top_bar').css("top", (diff).toString() + "px")
     } else {
         $('.top_bar').css("background-color", "rgba(255, 255, 255, 0.63)");
         $('.top_bar').css("top", "0px");
     }
-    console.log($(window).scrollTop(), diff, sum );
+    console.log($(window).scrollTop(), diff, sum);
 }
 
+var lastScrollTop;
 
 function toggleMenu() {
     if ($(".menu_items").css("display") == "none") {
-        // if menu hidde, show
+        // if menu hidden, show
+        lastScrollTop = $(window).scrollTop();
         $(".menu_items").css("display", "block");
         $(".content").hide();
+
     } else {
         $(".menu_items").css("display", "none");
         $(".content").show();
-
+        $(window).scrollTop(lastScrollTop);
     }
 
 }
