@@ -28,9 +28,7 @@ $(document).ready(function () {
                 }
                 // now toggle the expand menu
                 if ($(this).next().attr('class') == "expand") {
-                    console.log("yes");
                     // if there is an expandable menu, toggle it
-                    console.log($(this).next().attr("display"));
                     if ($(this).next().css("display") == "none") {
                         $(this).next().css("display", "block");
                     } else {
@@ -41,20 +39,72 @@ $(document).ready(function () {
         }
 
     });
-
+    showHideSendMsg();
     fixMenuBars();
     setGridBodyWidth();
 });
 
-$(window).scroll(function () {
+var scrollingUp = false;
+var lastScrollPos = 0;
+var msgBuddyTimer;
 
+$(window).scroll(function () {
+    detectScrollDirection();
+    showHideSendMsg();
     fixMenuBars();
 });
+
+function detectScrollDirection() {
+    // detect scrolling direction
+    if ($(window).scrollTop() > lastScrollPos)
+        scrollingUp = false;
+    else
+        scrollingUp = true;
+    lastScrollPos = $(window).scrollTop();
+}
+
+
+function showHideSendMsg() {
+    // actions based on scroll direction (hide/show)
+    var bottomBuffer = 200; // scrolling in this zone will not matter (msgbuddy visible)
+    var maxScrollTop = $(document).height() - $(window).height();
+
+    if ($(window).scrollTop() < (maxScrollTop - bottomBuffer)) {
+        // scrolling above the always visible zone
+        if (scrollingUp) {
+            // slide the msg button down
+            msgBuddyHide();
+        } else {
+            msgBuddyShow();
+            // set a timer to hide it again
+            clearTimeout(msgBuddyTimer);
+            msgBuddyTimer = setTimeout(() => {
+                msgBuddyHide();
+            }, 2000);
+        }
+
+    } else {
+        // in the buffer zone
+        clearTimeout(msgBuddyTimer);
+        msgBuddyShow();
+    }
+
+
+}
+
+function msgBuddyHide() {
+    $('.msg_buddy').css('transform', 'translateY(50px)');
+
+}
+
+function msgBuddyShow() {
+    $('.msg_buddy').css('transform', 'translateY(00px)');
+
+}
 
 // set the grid body width so it is tightest, for centering
 function setGridBodyWidth() {
     var howManyCanFit = Math.floor($('.grid_wrapper').width() / (GRID_ITEM_WIDTH + GRID_GAP));
-    console.log(howManyCanFit);
     $('.grid').css({
         'width': (howManyCanFit * (GRID_ITEM_WIDTH + GRID_GAP) - GRID_GAP).toString() + 'px'
     });
@@ -73,7 +123,6 @@ function fixMenuBars() {
         $('.top_bar').css("background-color", "rgba(255, 255, 255, 0.63)");
         $('.top_bar').css("top", "0px");
     }
-    console.log($(window).scrollTop(), diff, sum);
 }
 
 var lastScrollTop;

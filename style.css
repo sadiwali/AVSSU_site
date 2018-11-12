@@ -159,9 +159,11 @@ header {
     position: relative;
 }
 
-.sect h1 {
+.sect h1, .cent_sect h1 {
     padding: 0;
     margin: 0;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 
@@ -299,6 +301,7 @@ header {
     border-radius: 20px;
     z-index: 2;
     transition: 0.3s;
+
 }
 
 .msg_buddy .icon {
@@ -469,7 +472,7 @@ header {
         margin: 0 auto;
     }
     
-    .sect h1 {
+    .sect h1, .cent_sect h1 {
         text-align: center;
     }
 
