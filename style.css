@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+html {
+    overflow-y: scroll;
+    /*    overflow-x: hidden;*/
+    font-family: Raleway;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 100px;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 15px;
+    z-index: 10;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: dimgray;
+}
+
+
+header {
+    position: fixed;
+    padding: 30px 30px;
+    width: 300px;
+    top: 0px;
+    left: 0px;
+}
+
+.logo img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    cursor: pointer;
+}
+
+.logo img:hover {
+    opacity: 0.9;
+}
+
+.menu_items {
+    position: relative;
+    display: block;
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0;
+    font-family: Raleway;
+    font-weight: bolder;
+    font-size: 1.5em;
+    width: 100%;
+}
+
+.top_bar {
+    background-color: rgba(255, 147, 147, 0.63);
+    display: none;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+
+.hamburger {
+    position: absolute;
+    font-size: 1.3em;
+    cursor: pointer;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hamburger:hover {
+    color: #DA2875;
+}
+
+.expand {
+    display: none;
+    padding-left: 30px;
+    margin-top: 10px;
+    color: gray;
+    font-size: 0.7em;
+}
+
+.expand li {
+    margin-bottom: 10px;
+}
+
+.menu_items li:hover {
+    cursor: pointer;
+    color: #DA2875;
+}
+
+.full_menu {
+    display: block;
+}
+
+/* Main section content */
+
+.content {
+    position: relative;
+    width: calc(100% - 363px);
+    margin-left: 360px;
+}
+
+.cover {
+    position: relative;
+    height: 400px;
+}
+
+.cover_image {
+    background-image: url("https://www.daniels.utoronto.ca/sites/default/files/styles/gallery_lightbox/public/news/1-horner_17056_066-edit.jpg?itok=JmjJZCoi");
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(60%);
+    background-attachment: fixed;
+    background-position: bottom;
+}
+
+.cover h1 {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    color: white;
+    font-weight: lighter;
+
+}
+
+/* Generic sections */
+
+.sect {
+    margin-top: 50px;
+    position: relative;
+}
+
+.sect h1 {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Centered section */
+
+.cent_sect {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    position: relative;
+}
+
+.cent_sect p {
+    line-height: 30px;
+}
+
+
+
+.loc_obj {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.loc_obj .iframe {
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+/* Social */
+
+.social {
+    position: absolute;
+    text-align: center;
+    bottom: 20px;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.social li {
+    display: inline;
+    margin-right: 10px;
+    font-size: 2em;
+    color: white;
+}
+
+.social li:nth-last-child(1) {
+    margin-right: 0px;
+}
+
+.social li:hover {
+    color: #F1B256;
+    cursor: pointer;
+}
+
+
+/* Contact Form */
+
+.contact {
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.contact form {
+    width: 400px;
+}
+
+.contact p {
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+.contact form label {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom
+}
+
+.contact form input {
+    border: 1px solid black;
+    font-size: 1em;
+    padding: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+
+.contact form textarea {
+    border: 1px solid black;
+    font-size: 1em;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.contact form button {
+    padding: 10px 30px;
+    box-shadow: none;
+    border: 1px solid black;
+    background-color: white;
+    font-family: Raleway;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.contact form button:hover {
+    cursor: pointer;
+    background-color: #F1B256;
+    color: white;
+    border-color: white;
+}
+
+/* Message buddy */
+
+.msg_buddy {
+    position: fixed;
+    right: 40px;
+    bottom: -20px;
+    width: 195px;
+    height: 65px;
+    background-color: #F1B256;
+    border-radius: 20px;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.msg_buddy .icon {
+    position: absolute;
+    top: 0px;
+    left: 6px;
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.msg_buddy p {
+    position: absolute;
+    right: 10px;
+    top: -7px;
+    font-weight: bold;
+}
+
+.msg_buddy:hover {
+    height: 75px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+/* team grid */
+
+.grid_wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.grid {
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;    
+}
+
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.grid-item {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: gray;
+}
+.grid-item p {
+    line-height: normal;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 840px) {
+
+    header {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 30px 0px;
+    }
+
+    .top_bar {
+        display: block;
+    }
+
+    .menu_items {
+        padding-top: 50px;
+        display: none;
+        font-size: 2.1em;
+    }
+    
+    .logo img {
+        max-width: 50vw;
+        min-width: 20vw;
+        width: 100%;
+    }
+
+    .content {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .cover {
+        margin-top: 50px;
+    }
+
+    .cover h1 {
+        font-size: 1.6em;
+    }
+    .social li {
+        font-size: 2em;
+    }
+
+    .loc_obj .iframe {
+        margin-right: 0;
+
+        width: 100%;
+    }
+
+    .paddable {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .contact {
+            text-align: center;
+    }
+    
+    .contact p {
+        margin: 10px auto;
+    }
+    
+    .contact form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+}

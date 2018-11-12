@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+    <title>HOME</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="./javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+
+
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+    <div class="top_bar">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu();"><i class="fas fa-bars"></i></div>
+    </div>
+    
+  
+<header>
+    <div class="logo">
+        <img onclick="window.location='/'" src="./logo-01.png">
+    </div>
+
+
+    <ul class="menu_items">
+
+        <li onclick="window.location='/index.html'">HOME</li>
+        <li>ABOUT</li>
+        <div class="expand">
+            <li onclick="window.location='/history.html'">History</li>
+            <li onclick="window.location='/constitution.html'">constitution and minutes</li>
+            <li>Team 2018-2019</li>
+            <li>Affiliates</li>
+        </div>
+        <li>events</li>
+        <div class="expand">
+            <li>AVSSU goes to montreal!</li>
+            <li>eyeball undergraduate exhibition &amp; party</li>
+            <li>AVSSU Student initiative fund</li>
+        </div>
+        <li>WELLNESS</li>
+        <div class="expand">
+            <li>wellness wednesdays with naomi</li>
+            <li>archive: saturdays with shal</li>
+        </div>
+        <li>RESOURCES</li>
+        <li>FEEDBACK SURVEY!</li>
+
+    </ul>
+
+</header>
+
+<body>
+    
+      <div class="msg_buddy">
+        <div class="icon">
+        <i class="fab fa-facebook-messenger"></i>
+        </div>
+        <p>Send us a message</p>
+    </div>
+    
+    
+    <div class="content">
+        <div class="cover">
+            <div class="cover_image"></div>
+            <h1>Architecture and Visual Studies Student Union</h1>
+           <ul class="social">
+                <li><i class="fab fa-facebook-f"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+                <li><i class="fab fa-linkedin-in"></i></li>
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-flickr"></i></li>
+                <li><i class="far fa-envelope"></i></li>
+            </ul>
+        </div>
+        
+        <div class="sect">
+
+                <div class="loc_obj">
+                    <iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4465990305416!2d-79.40288908406957!3d43.659680879121105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34c06f7fa941%3A0x8eaede26eb41e220!2sJohn+H.+Daniels+Faculty+of+Architecture%2C+Landscape%2C+and+Design!5e0!3m2!1sen!2sca!4v1541546479905" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <div class="right_of_iframe paddable">
+                        <h1>Location</h1>
+                        <p>We moved! Office location to be assigned. <br><br> John H. Daniels Faculty of Architecture, Landscape and Design<br> 1 Spadina Crescent <br> Toronto, ON. M5S 2J5 <br> Canada <br> <b>avssu@daniels.utoronto.ca</b>
+                        </p>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="sect">
+            <div class="team">
+                <div class="grid">
+                    <div class="grid-item">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sect">
+             <div class="contact paddable">
+                <h1>Questions?</h1>
+                <p>Don't hesitate to contact us in person or shoot us a quick email using the form below.</p>
+                <form>
+                    <label>Name<span style="color: red;font-size: 2em;">*</span></label>
+                    <input>
+                    <label>Email<span style="color: red;font-size: 2em;">*</span></label>
+                    <input>
+                    <label>comment<span style="color: red;font-size: 2em;">*</span></label>
+                    <textarea></textarea>
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+<!--
+    <section class="cover">
+        <div class="cover_image">
+            <div class="img"></div>
+            <div class="center_section">
+                <h1>Architecture and Visual Studies Student Union</h1>
+
+
+            </div>
+            <ul class="social">
+                <li><i class="fab fa-facebook-f"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+                <li><i class="fab fa-linkedin-in"></i></li>
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-flickr"></i></li>
+                <li><i class="far fa-envelope"></i></li>
+            </ul>
+        </div>
+    </section>
+    <div class="content">
+        <br>
+        <br>
+        <br>
+        <div class="section_block">
+            <div class="location">
+                <div class="loc_obj">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4465990305416!2d-79.40288908406957!3d43.659680879121105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34c06f7fa941%3A0x8eaede26eb41e220!2sJohn+H.+Daniels+Faculty+of+Architecture%2C+Landscape%2C+and+Design!5e0!3m2!1sen!2sca!4v1541546479905" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <div class="right_of_iframe">
+                        <h1>Location</h1>
+                        <p>We moved! Office location to be assigned. <br><br> John H. Daniels Faculty of Architecture, Landscape and Design<br> 1 Spadina Crescent <br> Toronto, ON. M5S 2J5 <br> Canada <br> avssu@daniels.utoronto.ca
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="section_bock">
+            <div class="team">
+                <h1>Team 2018-2019</h1>
+                <div class="grid">
+                    <div class="grid-item">
+                        <img src="" />
+                        <p>President <br>Flora Yin <br><br>Contact me!<br>president@avssu.ca
+                        </p>
+                    </div>
+                    
+                    <div class="headshot">
+                        <img src="" />
+                        <p>President <br>Flora Yin <br><br>Contact me!<br>president@avssu.ca
+                        </p>
+                    </div>
+                    
+                    <div class="headshot">
+                        <img src="" />
+                        <p>President <br>Flora Yin <br><br>Contact me!<br>president@avssu.ca
+                        </p>
+                    </div>
+                    
+                    <div class="headshot">
+                        <img src="" />
+                        <p>President <br>Flora Yin <br><br>Contact me!<br>president@avssu.ca
+                        </p>
+                    </div>
+                    
+                    <div class="headshot">
+                        <img src="" />
+                        <p>President <br>Flora Yin <br><br>Contact me!<br>president@avssu.ca
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section_block">
+            <div class="contact">
+                <h1>Questions?</h1>
+                <p>Don't hesitate to contact us in person or shoot us a quick email using the form below.</p>
+                <form>
+                    <label>Name <span style="color: red;font-size: 2em;">*</span></label>
+
+                    <input style="">
+
+                    <label>Email <span style="color: red;font-size: 2em;">*</span></label>
+
+                    <input>
+
+                    <label>comment <span style="color: red;font-size: 2em;">*</span></label>
+
+                    <textarea></textarea>
+
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+-->
+
+
+</body>
+
+</html>
