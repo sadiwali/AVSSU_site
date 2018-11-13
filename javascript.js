@@ -11,6 +11,9 @@ $(document).ready(function () {
             transitionDuration: '0.2s',
         });
     }
+    showHideSendMsg();
+    fixMenuBars();
+    setGridBodyWidth();
 
     // the menu click handling
     $(".menu_items > li").each(function () {
@@ -39,10 +42,35 @@ $(document).ready(function () {
         }
 
     });
-    showHideSendMsg();
-    fixMenuBars();
-    setGridBodyWidth();
+
+
+
+    if (hasTouch()) { // remove all :hover stylesheets
+        try { // prevent exception on browsers not supporting DOM styleSheets properly
+            for (var si in document.styleSheets) {
+                var styleSheet = document.styleSheets[si];
+                if (!styleSheet.rules) continue;
+
+                for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                    if (!styleSheet.rules[ri].selectorText) continue;
+
+                    if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                        styleSheet.deleteRule(ri);
+                    }
+                }
+            }
+        } catch (ex) {}
+    }
+
 });
+
+
+function hasTouch() {
+    return 'ontouchstart' in document.documentElement ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0;
+}
+
 
 var scrollingUp = false;
 var lastScrollPos = 0;
@@ -66,7 +94,7 @@ function detectScrollDirection() {
 
 function showHideSendMsg() {
     // actions based on scroll direction (hide/show)
-    var bottomBuffer = 200; // scrolling in this zone will not matter (msgbuddy visible)
+    var bottomBuffer = 100; // scrolling in this zone will not matter (msgbuddy visible)
     var maxScrollTop = $(document).height() - $(window).height();
 
     if ($(window).scrollTop() < (maxScrollTop - bottomBuffer)) {
@@ -93,7 +121,7 @@ function showHideSendMsg() {
 }
 
 function msgBuddyHide() {
-    $('.msg_buddy').css('transform', 'translateY(50px)');
+    $('.msg_buddy').css('transform', 'translateY(55px)');
 
 }
 
@@ -134,25 +162,32 @@ function toggleMenu() {
         $(".menu_items").css("display", "block");
         $(".content").hide();
         msgBuddyShow();
-
+        clearTimeout(msgBuddyTimer);
     } else {
         $(".menu_items").css("display", "none");
         $(".content").show();
         $(window).scrollTop(lastScrollTop);
-        showHideSendMsg();
+        msgBuddyHide();
     }
-
 }
 
+var wentBig = true;
+
 $(window).resize(function () {
-    if ($(window).outerWidth() > 840) {
+    if ($(window).width() >= 840) {
         // full site
+        wentBig = true;
         $('.menu_items').css("display", "block");
         $(".content").show();
-
     } else {
+        console.log("changes " + $(window).width());
         // mobile site
-        $('.menu_items').css("display", "none");
+
+        // have to only hide when coming from a big size page
+        if (wentBig) {
+            wentBig = false;
+            $('.menu_items').css("display", "none");
+        }
     }
     setGridBodyWidth();
     fixMenuBars();
