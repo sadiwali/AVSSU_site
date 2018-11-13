@@ -1,5 +1,6 @@
 var GRID_ITEM_WIDTH = 200; // 100px each cell in grid
 var GRID_GAP = 40; // 10 px grid gap for packery
+var MAX_ITEMS_SHORTENABLE = 3; // maximum number of list items visible before more is clicked
 
 
 $(document).ready(function () {
@@ -43,6 +44,10 @@ $(document).ready(function () {
 
     });
 
+    // shorten all shortenable lists
+    $(".shortenable").each(function () {
+        hideMoreThan(this, MAX_ITEMS_SHORTENABLE);
+    });
 
 
     if (hasTouch()) { // remove all :hover stylesheets
@@ -127,6 +132,52 @@ function msgBuddyHide() {
 
 function msgBuddyShow() {
     $('.msg_buddy').css('transform', 'translateY(00px)');
+
+}
+
+function hideMoreThan(list, num) {
+    var i = 0;
+    $(list).children("li").each(function () {
+        if (i >= num) {
+            $(this).hide()
+        }
+        i++;
+    });
+    // add the more button
+    if (i > num - 1) {
+        $(list).append("<li onclick='toggleShowAll(this)'>more...</li>");
+    }
+}
+
+function toggleShowAll(list) {
+    console.log(list);
+
+    console.log($(list).parent().children().eq(-1).text());
+    // if something was hidden
+    if ($(list).parent().children().eq(-1).text() == "hide...") {
+        // hide it
+        var i = 0;
+        $(list).parent().children("li").each(function () {
+            if (i >= MAX_ITEMS_SHORTENABLE) {
+                $(this).hide();
+            }
+            i++;
+        });
+        // unhide the more button
+        $(list).parent().children().eq(-1).show();
+        // rename it to show
+        $(list).parent().children().eq(-1).html("show...");
+
+    } else {
+        // show all
+        console.log("showing");
+        $(list).parent().children().each(function () {
+            $(this).show();
+        });
+        $(list).parent().children().eq(-1).html("hide...");
+
+    }
+
 
 }
 

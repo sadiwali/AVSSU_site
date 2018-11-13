@@ -417,8 +417,28 @@ a:hover {
     background-color: #DE3E83;
 }
 
+/* Announcements */
+.announcements {
+    list-style: decimal;
+    font-size: 1.3em;
+    max-width: 800px;
+    padding-left: 80px;
+}
 
+.announcements li {
+    margin-bottom: 5px;
+}
 
+.announcements li:nth-last-child(1) {
+    list-style: none;
+    margin-top: 20px;
+    color: gray;
+}
+
+.announcements li:nth-last-child(1):hover {
+    cursor: pointer;
+    color: black;
+}
 @media only screen and (max-width: 840px) {
 
     header {
