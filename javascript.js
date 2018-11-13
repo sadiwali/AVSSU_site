@@ -133,11 +133,13 @@ function toggleMenu() {
         lastScrollTop = $(window).scrollTop();
         $(".menu_items").css("display", "block");
         $(".content").hide();
+        msgBuddyShow();
 
     } else {
         $(".menu_items").css("display", "none");
         $(".content").show();
         $(window).scrollTop(lastScrollTop);
+        showHideSendMsg();
     }
 
 }
