@@ -39,6 +39,10 @@ body {
     background-color: dimgray;
 }
 
+::selection {
+    background-color: #F2B256;
+}
+
 
 header {
     position: fixed;

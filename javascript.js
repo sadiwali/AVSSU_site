@@ -175,10 +175,7 @@ function toggleShowAll(list) {
             $(this).show();
         });
         $(list).parent().children().eq(-1).html("hide...");
-
     }
-
-
 }
 
 // set the grid body width so it is tightest, for centering
