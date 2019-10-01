@@ -56,7 +56,7 @@ header {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 80%;
     cursor: pointer;
 }
 
@@ -69,7 +69,7 @@ header {
     display: block;
     list-style: none;
     text-transform: uppercase;
-    padding: 0;
+    padding: 0 0 0 30px;
     font-family: Raleway;
     font-weight: bolder;
     font-size: 1.5em;
@@ -169,6 +169,11 @@ header {
     margin: 0;
     margin-top: 80px;
     margin-bottom: 80px;
+}
+
+.sect p {
+    max-width: 800px;
+    
 }
 
 
@@ -309,9 +314,9 @@ header {
 
 .msg_buddy .icon {
     position: absolute;
-    top: 0px;
-    left: 6px;
-    font-size: 2em;
+    top: 5px;
+    left: 12px;
+    font-size: 1.5em;
     margin-right: 10px;
 }
 
@@ -329,6 +334,13 @@ header {
     transition: 0.3s;
 }
 
+
+/* GENERAL DESIGN */
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
 
 
 /* team grid */
@@ -495,7 +507,7 @@ a:hover {
     }
 
     .paddable {
-        padding: 10px;
+        padding: 20px;
         box-sizing: border-box;
         margin: 0 auto;
     }
@@ -517,6 +529,7 @@ a:hover {
     .cent_sect h1 {
         text-align: center;
     }
+    
 
 
 

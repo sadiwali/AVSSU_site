@@ -166,7 +166,7 @@ function toggleShowAll(list) {
         // unhide the more button
         $(list).parent().children().eq(-1).show();
         // rename it to show
-        $(list).parent().children().eq(-1).html("show...");
+        $(list).parent().children().eq(-1).html("more...");
 
     } else {
         // show all
