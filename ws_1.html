@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+    <title>HOME</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="./javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+
+
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<div class="top_bar">
+    <div class="hamburger" id="hamburger" onclick="toggleMenu();"><i class="fas fa-bars"></i></div>
+</div>
+
+<header>
+    <div class="logo">
+        <img onclick="window.location='/'" src="./logo-01.png">
+    </div>
+
+
+    <ul class="menu_items">
+
+        <li onclick="window.location='./index.html'">HOME</li>
+
+        <li>ABOUT</li>
+        <div class="expand">
+            <li class="disabled" onclick="window.location='./our_story.html'">Our Story</li>
+            <li class="disabled" onclick="window.location='./team.html'">Team 2019-2020</li>
+        </div>
+
+        <li>events</li>
+        <div class="expand">
+            <li onclick="window.location='./ws_2.html'">Workshop 2 AutoCAD</li>
+            <li onclick="window.location='./ws_1.html'">Workshop 1 Processing</li>
+        </div>
+        <li onclick="window.location='/resources.html'">RESOURCES</li>
+    </ul>
+
+</header>
+
+<body>
+
+
+    <div class="msg_buddy" onclick="window.open('https://www.facebook.com/uoftaald/')">
+        <div class="icon">
+            <i class="fab fa-facebook-messenger"></i>
+        </div>
+        <p>Send us a message</p>
+    </div>
+
+
+
+    <div class="content">
+        <div class="sect event paddable">
+<!--            <div class="banner"><img src=""></div>-->
+            <h1>Emergency Processing Workshop</h1>
+            <h2>Hosted by AALD</h2>
+            <h3>September 26th 2019</h3>
+            <h4>Location: DA200 3-5PM</h4>
+
+            <p>Come and get answers to your last minute questions, and get 1 on 1 help with your assignment 1 for ARC180.</p>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
